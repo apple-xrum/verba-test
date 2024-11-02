@@ -50,7 +50,7 @@ const todoSlice = createSlice({
     ) {
       const index = state.findIndex((todo) => todo.id === action.payload.id);
       if (index !== -1) {
-        state[index].completed = action.payload.deleted;
+        state[index].deleted = action.payload.deleted;
         localStorage.setItem('todos', JSON.stringify(state));
       }
     },
