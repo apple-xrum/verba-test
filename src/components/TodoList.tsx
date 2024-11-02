@@ -41,13 +41,13 @@ const TodoList: React.FC = () => {
       <ul>
         {filteredTodos.map((todo: Todo) => (
           <li key={todo.id}>
-            {location.pathname !== '/deleted' && <input
+            {location.pathname !== '/deleted' && !todo.deleted && <input
               type="checkbox"
               checked={todo.completed}
               onChange={(e) => handleToggleCompletedTodo(todo.id, e.target.checked)}
             /> }
             {todo.description}
-            {location.pathname !== '/completed' && <input
+            {location.pathname !== '/completed' && !todo.completed && <input
               type="checkbox"
               checked={todo.deleted}
               onChange={(e) => handleToggleDeleteTodo(todo.id, e.target.checked)}
