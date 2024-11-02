@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import SignIn from './components/SignIn';
 import TodoList from './components/TodoList';
+import { AuthContext } from './context/AuthContext';
 
 function App() {
-  //const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-  const isLoggedIn = true;
+  const { isLoggedIn } = useContext(AuthContext)!;
 
   return (
     <div>
