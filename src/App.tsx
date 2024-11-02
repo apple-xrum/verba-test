@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import SignIn from './components/SignIn';
 import TodoList from './components/TodoList';
+import AddTodo from './components/AddTodo';
 import { AuthContext } from './context/AuthContext';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
 
   return (
     <div>
+      {isLoggedIn && <AddTodo />}
       <Routes>
         <Route path="/signin" element={<SignIn />} />
         <Route
