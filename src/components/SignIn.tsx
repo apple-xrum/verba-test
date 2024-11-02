@@ -20,20 +20,22 @@ const SignIn: React.FC = () => {
   }
 
   return (
-    <form onSubmit={handleSignIn}>
+    <form onSubmit={handleSignIn} className='form'>
       <input
+        className='form__input'
         type="text"
         placeholder="Username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
+        className='form__input'
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button type='submit'>Войти</button>
+      <button type='submit' className='form__button'>Войти</button>
     </form>
   );
 };

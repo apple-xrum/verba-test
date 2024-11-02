@@ -9,7 +9,7 @@ function App() {
   const { isLoggedIn } = useContext(AuthContext)!;
 
   return (
-    <div>
+    <div className='page'>
       {isLoggedIn && <AddTodo />}
       <Routes>
         <Route path="/signin" element={<SignIn />} />

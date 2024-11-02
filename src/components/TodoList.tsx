@@ -36,23 +36,25 @@ const TodoList: React.FC = () => {
   });
 
   return (
-    <div>
+    <div className='todo'>
       <Navbar />
-      <ul>
+      <ul className='todo__list'>
         {filteredTodos.map((todo: Todo) => (
-          <li key={todo.id}>
+          <li className='todo__item' key={todo.id}>
+            <span>{todo.description}</span>
             {location.pathname !== '/deleted' && !todo.deleted && <input
               type="checkbox"
+              className='todo__checkbox todo__checkbox_completed'
               checked={todo.completed}
               onChange={(e) => handleToggleCompletedTodo(todo.id, e.target.checked)}
             /> }
-            {todo.description}
             {location.pathname !== '/completed' && !todo.completed && <input
               type="checkbox"
+              className='todo__checkbox todo__checkbox_deleted'
               checked={todo.deleted}
               onChange={(e) => handleToggleDeleteTodo(todo.id, e.target.checked)}
             /> }
-            {location.pathname === '/deleted' && <button onClick={() => handleRemoveTodo(todo.id)}>Удалить</button>}
+            {location.pathname === '/deleted' && <button className='todo__button' onClick={() => handleRemoveTodo(todo.id)}>Удалить</button>}
           </li>
         ))}
       </ul>

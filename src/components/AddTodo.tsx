@@ -18,8 +18,8 @@ const AddTodo: React.FC = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleAddTodo}>Добавить</button>
+    <div className='todo-add'>
+      <button className='todo-add__button-add' onClick={handleAddTodo}>Добавить</button>
       <input
         type="text"
         placeholder='Пополните список'
@@ -27,7 +27,7 @@ const AddTodo: React.FC = () => {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <button onClick={handleRemoveAllTodos}>Очистить</button>
+      <button className='todo-add__button-delete' onClick={handleRemoveAllTodos}>Очистить</button>
     </div>
   );
 };

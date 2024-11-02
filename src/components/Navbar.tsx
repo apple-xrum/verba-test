@@ -5,8 +5,8 @@ const Navbar: React.FC = () => {
   const location = useLocation();
 
   return (
-    <nav>
-      <ul>
+    <nav className='todo__nav'>
+      <ul className='todo__nav-list'>
         <li className={location.pathname === '/' ? 'active' : ''}>
           <Link to="/">
             Текущие дела
